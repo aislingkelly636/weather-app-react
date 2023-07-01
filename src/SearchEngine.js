@@ -1,15 +1,16 @@
-import axios from "axios";
+import React, { useState } from "react";
 
 export default function SearchEngine() {
-  function handleSubmit(response) {
-    alert(`The weather in new york is ${response.data.main.temp}C`);
-  }
+  const [city, setCity] = useState(" ");
+  const [message, setMessage] = useState(" ");
 
-  let apiKey = "0ebc654fccbc00189d5408f3d6f15b08";
-  let units = "metric";
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=NewYork&appid=${apiKey}&units=${units}`;
-
-  axios.get(url).then(handleSubmit);
-
-  return <h2>Hello</h2>;
+  return (
+    <div className="SearchEngine">
+      <form onSubmit={handleSubmit}>
+        <input type="search" placeholder="Enter a city" onChange={updateCity} />
+        <input type="submit" value="Search" />
+        <h5>{message}</h5>
+      </form>
+    </div>
+  );
 }
