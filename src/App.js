@@ -1,12 +1,12 @@
 import "./App.css";
-import SearchEngine from "./SearchEngine";
+import WeatherDetails from "./WeatherDetails";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hello Aisling </p>
-        <SearchEngine />
+        <h1>Weather App </h1>
+        <WeatherDetails />
       </header>
     </div>
   );
